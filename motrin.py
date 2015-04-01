@@ -14,8 +14,6 @@ s = int(raw_input("type in the hour taken, just the hour in 24 hour format and h
 # subtract 8 hours from s
 diffTime = s - 8
 
-
-
 if timeNow > todayAt (s) and s <= 8:
     print "go ahead, its safe to take another dose"
 elif timeNow > todayAt (s) and s > 8:
