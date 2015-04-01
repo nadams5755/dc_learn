@@ -4,9 +4,6 @@ import string
 my_bill_dollas = random.randint(0,101)
 my_bill_cents = random.randint(0,100)
 
-my_bill_dollas = 63
-my_bill_cents = 44
-
 # insert a 0 in the 10s place of the bill if the change is below $0.10.  ex: $0.04
 padding = ""
 if my_bill_cents < 10:
