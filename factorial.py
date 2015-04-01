@@ -1,9 +1,11 @@
 def recursiveFactorialForDan(num):
+  result = 1
   # base cases for factorials
   if num == 0 or num == 1:
-    return 1
+    return result
   else:
-    return num * recursiveFactorialForDan(num-1)
+    result = num * recursiveFactorialForDan(num-1)
+    return result
 
 def iterativeFactorialForDan(num):
   result = 1
