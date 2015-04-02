@@ -20,6 +20,10 @@ if float(cash_input) < my_bill:
 elif my_bill == float(cash_input):
   print "no change.  get lost shitlord."
 else:
+  print "change should total " + str((float(cash_input) - my_bill))
+
+  change = str((float(cash_input) - my_bill)).split('.')
+
   cash = cash_input.split('.')
 
   my_cash_dollas = int(cash[0])
@@ -33,7 +37,7 @@ else:
   change_d = { '100': 0, '50': 0, '20': 0, '10': 0, '5': 0, '1': 0 }
   change_c = { '25': 0, '10': 0, '5': 0, '1': 0}
 
-  my_remain_bill = my_cash_dollas - my_bill_dollas
+  my_remain_bill = int(change[0])
   # integer math, the bill is over $100
   if my_remain_bill / 100 != 0:
     change_d['100'] = my_remain_bill / 100 # count bills needed
@@ -60,7 +64,7 @@ else:
       my_remain_bill -= change_d['1'] * 1
   print str(change_d)
 
-  my_remain_coin = my_cash_cents - my_bill_cents
+  my_remain_coin = int(change[1])
 
   if my_remain_coin / 25 != 0:
       change_c['25'] = my_remain_coin / 25
