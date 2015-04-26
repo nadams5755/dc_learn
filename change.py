@@ -13,7 +13,7 @@ my_bill = float(str(my_bill_dollas) + "." + padding + str(my_bill_cents))
 
 print "your bill is $" + str(my_bill)
 
-cash_input = str(float(raw_input("how much cash wouldy you like to pay with? ")))
+cash_input = str(float(raw_input("how much cash would you like to pay with? ")))
 
 if float(cash_input) < my_bill:
   print "eat shit and wash dishes!"
