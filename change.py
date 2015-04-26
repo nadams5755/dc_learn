@@ -25,22 +25,24 @@ else:
   padding = ""
   if change[1] < 10:
     padding = "0"
-  
+
   print "my change should be $" + str(change[0]) + "." + padding + str(change[1])
 
   change_d = { 100: 0, 50: 0, 20: 0, 10: 0, 5: 0, 1: 0 }
   change_c = { 25: 0, 10: 0, 05: 0, 01: 0}
 
   my_remain_bill = int(change[0])
-  for denom in sorted(change_d.keys(), reverse=True):
+  for denom in sorted(change_d, reverse=True):
     if my_remain_bill / denom != 0:
       change_d[denom] = my_remain_bill / denom
       my_remain_bill -= change_d[denom] * denom
-  print str(change_d)
+      print str(denom) + ": " + str(change_d[denom])
+
+  print "---"
 
   my_remain_coin = int(change[1])
-  for denom in sorted(change_c.keys(), reverse=True):
+  for denom in sorted(change_c, reverse=True):
     if my_remain_coin / denom != 0:
       change_c[denom] = my_remain_coin / denom
       my_remain_coin -= change_c[denom] * denom
-  print str(change_c)
+      print str(denom) + ": " + str(change_c[denom])
